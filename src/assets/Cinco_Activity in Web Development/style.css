@@ -21,10 +21,10 @@ body {
       text-decoration: none; }
   
   .text-black {
-    color: #000 !important; }
+    color: #000; }
   
   .bg-black {
-    background: #000 !important; }
+    background: #000; }
   
   .site-wrap:before {
     -webkit-transition: .3s all ease-in-out;
@@ -65,7 +65,7 @@ body {
         background-color: #fff; }
   
   .line-height-1 {
-    line-height: 1 !important; }
+    line-height: 1; }
   
   .bg-black {
     background: #000; }
@@ -75,13 +75,13 @@ body {
     border-radius: 0;
     background: transparent;
     border-color: #777;
-    color: #fff !important; }
+    color: #fff ; }
     .form-control:active, .form-control:focus {
       border-color: #20c997;
       background: transparent; }
     .form-control:hover, .form-control:active, .form-control:focus {
-      -webkit-box-shadow: none !important;
-      box-shadow: none !important; }
+      -webkit-box-shadow: none ;
+      box-shadow: none ; }
   
   .site-section {
     padding: 2.5em 0; }
@@ -120,7 +120,7 @@ body {
       background: #000; }
   
   .border-top {
-    border-top: 1px solid #edf0f5 !important; }
+    border-top: 1px solid #edf0f5 ; }
   
   .site-footer {
     padding: 4em 0;
@@ -135,7 +135,7 @@ body {
     .site-footer a {
       color: #999999; }
       .site-footer a:hover {
-        color: white; }
+        color: ; }
     .site-footer ul li {
       margin-bottom: 10px; }
     .site-footer .footer-heading {
@@ -159,7 +159,7 @@ body {
     position: relative; }
     @media (max-width: 991.98px) {
       .hover-bg-enlarge {
-        height: auto !important; } }
+        height: auto ; } }
     .hover-bg-enlarge > div {
       -webkit-transform: scale(1);
       -ms-transform: scale(1);
@@ -173,7 +173,7 @@ body {
       transform: scale(1.2); }
     @media (max-width: 991.98px) {
       .hover-bg-enlarge .bg-image-md-height {
-        height: 300px !important; } }
+        height: 300px ; } }
   
   .bg-image {
     background-size: cover;
@@ -193,7 +193,7 @@ body {
     height: 90px;
     display: inline-block;
     border: 2px solid #fff;
-    color: #fff !important;
+    color: #fff ;
     border-radius: 50%;
     position: relative;
     -webkit-transition: .3s all ease-in-out;
