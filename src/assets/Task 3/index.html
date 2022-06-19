@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1171/1171977.png">
+  <title>Task 3 </title>
+  <script src="https://use.fontawesome.com/7dfeb3a071.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,500" rel="stylesheet">
+  
+  
+  
+<style>
+body{
+  margin:0;
+  background-color:#010712;
+  background-image:url(https://lh3.googleusercontent.com/qWgZPNkgVhxKMdulPC44PKOMk1WxFhFOiD-kAU4KkK76wDsaekYc4sBd-af7D8HRnZikwo9AhzsDTRxYqzCuZ_LH9wbeq0WrvGgFzkwUBRRTjMPY8S5SjlIxYw9F9lQiNTw919bGXqayiJpkaYnM6IY7WuJB6zNHUdg_U1RgmWvzCOWf0I9Cb_sX7qzXtAItSoQ1x1V3t30f6VXBFOo7_eDPDtutVxpCOP3JmwXzqWvUGAQdRkGaYwocF3lrbQ5v4WORNW6ZHH8LnApXTH3nRoh6keZJElMtxILENGO9GVUJG5PF1KNUJxbUgHmbc9te6UdlmQeGJww1L-4cTBVqjruyOqAnyrZGXSNNprAtH_NLC6muyqAyUnIq_FCq6VBhA4jTNUthOfkT2Qb4uqxcOZMFqA-0WnZ3qOpMYzSLfvm78ytwp-p8ry1B4E9nbQ_avGjazcT4ei5MIlF8EyjOwyoTIvx2vwEj4MqBGQ1Xd3dKD_JYJfCQc7y9QqTKCNLvGc2z8zPfaSUTGyHrHM5deTMTRBmZ192Q_BuNTCnQ7WzIzOUXEs-wHoDNqmY3Bt8V-2EDnPvIy1EAZiDow2aqH1ZAsSMZc5wlV32c4QTYdlRP_ZtbfEkximfUSAmq_VQeYC0pH5AI2xQ8dF48nYzB5sVI9GNt-UK3kazZoc4l06SCiVQvKPL-xIUcwdKN-Hgbd4RAA3csKqiWqVuukbkk9HoNX9n9BmPyq2KZrsxmx5_pcyISpe7P4LLWSbglHVUe7_UPqYD3LGx95L3wmf8SQC4SI93kbHRGA5LmXm9l5UXkPr6Y59uK5VdVZCUBarCyeWxZfSrDjv_fJKNA5RAVU1ilekQi-nT1SFk90byOEN-xdJLYa_rC3PSCkBcFEoXyBlPkNWYfRrWsxoI4SVwmvjDHxE9VzLt4hkl0655bUQGDNTXB=w1791-h1008-no?authuser=0);
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  height:100vh;
+}
+.container{
+  width:400px;
+  height:200px;
+  position:relative;
+  perspective: 1000;
+  -webkit-perspective: 1000;
+  left:calc(50% - 200px);
+  top:calc(50vh - 100px);
+}
+.card{
+  width:100%;
+  height:100%;
+  position:absolute;
+  transform-style:preserve-3d;
+  -webkit-transform-style:preserve-3d;
+  transition:transform 1s ease;
+  cursor:pointer;
+}
+.back, .front{
+  border-radius:6px;
+  position:absolute;
+  width:100%;
+  height:100%;
+  transform-style:preserve-3d;
+  -webkit-transform-style:preserve-3d;
+  
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+}
+.contentfront{
+  width:100%;
+  height:100%;
+  float:left;
+  transform:translatez(60px);
+  -webkit-transform:translatez(60px);
+  
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  
+  transform-style:preserve-3d;
+  -webkit-transform-style:preserve-3d;
+  
+}
+.contentback{
+  width:100%;
+  height:100%;
+  float:left;
+  transform:translatez(60px);
+  -webkit-transform:translatez(60px);
+  
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  
+  transform-style:preserve-3d;
+  -webkit-transform-style:preserve-3d;
+  
+}
+.back{
+  transform:rotateY(180deg);
+  background-color:#232227;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.front{
+  text-transform:uppercase;
+  background-color:#232227;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.date{
+  height:100%;
+  width:130px;
+  float:left;
+  background-color:#64A8F4;
+  border-radius:0 6px 6px 0;
+  text-align:right;
+  padding:10px 30px;
+  box-sizing:border-box;
+  transform-style:preserve-3d;
+  -webkit-transform-style:preserve-3d;
+}
+.datecont{
+  height:100%;
+  transform:translatez(60px) scale(.9);
+  -webkit-transform:translatez(60px) scale(.9);
+}
+#date{
+  font-size:50px;
+  color:#ECECE7;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:500;
+  float:right;
+}
+#day{
+  float:right;
+  font-size:14px;
+  color:#000636;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:400;
+}
+#month{
+  float:right;
+  font-size:10px;
+  color:#000636;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:200;
+}
+.date i{
+  color:#ECECE7;
+  position:absolute;
+  bottom:10px;
+  right:0;
+}
+.date i:hover{
+  color:#232227;
+  transition:.3s ease;
+}
+.month{
+  height:100%;
+  width:270px;
+  float:left;
+  padding:20px 30px;
+  box-sizing:border-box;
+}
+.month table{
+  width:100%;
+}
+.orangeTr{
+  color:#64A8F4;
+}
+.whiteTr{
+  color:#ECECE7;
+  
+}
+.whiteTr th:hover{
+  color:#64A8F4;
+  transition:.3s ease;
+}
+.month tr{
+  height:24px;
+}
+.month th{
+  width:14%;
+  font-size:10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:400;
+}
+
+.flipped{
+  transform:rotateY(-180deg);
+  /*height:400px;
+  width:200px;
+  left:calc(50% - 100px);
+  top:calc(50vh - 200px);*/
+}
+.backcontainer{
+  transform-style:preserve-3d;
+  width:calc(100% - 60px);
+  height:calc(100% - 40px);
+  float:left;
+  margin-left:30px;
+  margin-top:20px;
+  /*transform:translatez(60px) scale();*/
+  
+  background-color:#64A8F4;
+  border-radius:6px;
+  padding:10px 30px;
+  box-sizing:border-box;
+  transform-style:preserve-3d;
+  -webkit-transform-style:preserve-3d;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <body onload="startTime()">
+  <div class="container">
+    <div class="card">
+      <div class="front">
+        <div class="contentfront">
+          <div class="month">
+            <table>
+              <tr class="orangeTr">
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+                <th>S</th>
+              </tr>
+              <tr class="whiteTr">
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+              </tr>
+              <tr class="whiteTr">
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+              </tr>
+              <tr class="whiteTr">
+                <th>11</th>
+                <th>12</th>
+                <th>13</th>
+                <th>14</th>
+                <th>15</th>
+                <th>16</th>
+                <th>17</th>
+              </tr>
+              <tr class="whiteTr">
+                <th>18</th>
+                <th>19</th>
+                <th>20</th>
+                <th>21</th>
+                <th>22</th>
+                <th>23</th>
+                <th>24</th>
+              </tr>
+              <tr class="whiteTr">
+                <th>25</th>
+                <th>26</th>
+                <th>27</th>
+                <th>28</th>
+                <th>29</th>
+                <th>30</th>
+                <th></th>
+              </tr>
+            </table>
+          </div>
+          <div class="date">
+            <div class="datecont">
+              <div id="date"></div>
+              <div id="day"></div>
+              <div id="month"></div>
+              <i class="fa fa-pencil edit" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="back">
+        <div class="contentback">
+          <div class="backcontainer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+      <script id="rendered-js" >
+let cardElement = document.querySelector(".card");
+
+cardElement.addEventListener("click", flip);
+
+function flip() {
+  cardElement.classList.toggle("flipped");
+}
+
+function startTime() {
+  var weekday = new Array();
+  weekday[0] = "Sunday";
+  weekday[1] = "Monday";
+  weekday[2] = "Tuesday";
+  weekday[3] = "Wednesday";
+  weekday[4] = "Thursday";
+  weekday[5] = "Friday";
+  weekday[6] = "Saturday";
+  var month = new Array();
+  month[0] = "January";
+  month[1] = "February";
+  month[2] = "March";
+  month[3] = "April";
+  month[4] = "May";
+  month[5] = "June";
+  month[6] = "July";
+  month[7] = "August";
+  month[8] = "September";
+  month[9] = "October";
+  month[10] = "November";
+  month[11] = "December";
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  var d = today.getDate();
+  var y = today.getFullYear();
+  var wd = weekday[today.getDay()];
+  var mt = month[today.getMonth()];
+
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('date').innerHTML =
+  d;
+  document.getElementById('day').innerHTML =
+  wd;
+  document.getElementById('month').innerHTML =
+  mt + "/" + y;
+
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i;};
+  return i;
+}
+    </script>
+
+<div id="calendar" style="height: 600px; width: 100%"></div>
+  <script src="MindFusion. Scheduling.is" type="text/javascript"></script>
+  <script src="ItemEvents.js" type="text/javascript"></script>
+  
+
+</body>
+
+</html>
+ 
