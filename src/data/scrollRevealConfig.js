@@ -4,6 +4,8 @@ export const defaultProps = {
   duration: 1000,
   desktop: true,
   mobile: true,
+  
+  
 };
 
 export const targetElements = [
